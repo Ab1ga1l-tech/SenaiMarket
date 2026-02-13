@@ -1,20 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {Text, View} from 'react-native';
+import { PRODUTOS } from './assets/src/data/Produtos';
 
-export default function App() {
+export default function App(){
+  console.log(PRODUTOS);
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+      <Text>Temos {PRODUTOS.length} produtos cadastrados 🚀</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
