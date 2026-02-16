@@ -1,11 +1,21 @@
-import {Text, View} from 'react-native';
-import { PRODUTOS } from './assets/src/data/Produtos';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function App(){
-  console.log(PRODUTOS);
+import AuthStack from './src/routes/AuthStack';
+import AppTabs from './src/routes/AppTabs';
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
   return (
-    <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-      <Text>Temos {PRODUTOS.length} produtos cadastrados 🚀</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+    
+        <Stack.Screen name="Auth" component={AuthStack} />
+
+        <Stack.Screen name="Main" component={AppTabs} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
