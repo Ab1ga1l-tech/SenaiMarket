@@ -4,17 +4,13 @@ import LoginScreen from '../screens/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 
-export default function AuthStack(){
-    return(
-        <StackNavigator>
-            <Stack.Screen
-            name='Login' component={{LoginScreen}} options={{headerShown:false}}
-            />
-        </StackNavigator>
-    );
+export default function AuthStack() {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen 
+        name="Login" 
+        component={LoginScreen} 
+      />
+    </Stack.Navigator>
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {flex: 1, alignItems:'center', justifyContent: 'center'},
-  text: {fontSize: 20, marginBottom: 20}
-})
